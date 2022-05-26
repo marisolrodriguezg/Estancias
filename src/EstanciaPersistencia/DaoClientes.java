@@ -1,14 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package EstanciaPersistencia;
 
-/**
- *
- * @author Matias Ruiz
- */
-public class DaoClientes {
-    
+import EstanciaEntidades.Cliente;
+
+public class DaoClientes extends DAO {
+
+    public Cliente buscarClienteoPorId(int idCliente) throws Exception {
+        try {
+        
+            String sql = "SELECT * FROM clientes "
+                    + " WHERE id_cliente = '" + idCliente + "'";
+
+            consultarBase(sql);
+
+            Cliente cliente = null;
+            while (resultado.next()) {
+                cliente = new Cliente();
+                cliente.setIdCliente(resultado.getInt(1));
+
+            }
+            desconectarBase();
+            return cliente;
+        } catch (Exception e) {
+            desconectarBase();
+            throw e;
+        }
+    }
 }

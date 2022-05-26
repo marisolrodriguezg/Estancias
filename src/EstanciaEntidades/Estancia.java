@@ -4,7 +4,7 @@ package EstanciaEntidades;
 import java.util.Date;
 
 
-public class Estancias {
+public class Estancia {
     private int idEstancia;
     private int idCliente;
     private int idCasa;
@@ -12,10 +12,10 @@ public class Estancias {
     private Date fechaDesde;
     private Date fechaHasta;
 
-    public Estancias() {
+    public Estancia() {
     }
 
-    public Estancias(int idEstancia, int idCliente, int idCasa, String nombreHuesped, Date fechaDesde, Date fechaHasta) {
+    public Estancia(int idEstancia, int idCliente, int idCasa, String nombreHuesped, Date fechaDesde, Date fechaHasta) {
         this.idEstancia = idEstancia;
         this.idCliente = idCliente;
         this.idCasa = idCasa;
